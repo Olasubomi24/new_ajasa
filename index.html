@@ -1358,6 +1358,21 @@
 
     <!-- Custom script for this template -->
     <script src="assets/js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  var navLinks = document.querySelectorAll('nav ul li a');
+  for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', scrollToSection);
+  }
+});
+
+// Scroll to the section when navbar link is clicked
+function scrollToSection(event) {
+  event.preventDefault();
+  var targetSection = document.querySelector(this.getAttribute('href'));
+  targetSection.scrollIntoView({ behavior: 'smooth' });
+}
+    </script>
 </body>
 
 <!-- dustech/index.html  13 Nov 2019 12:55:11 GMT -->
